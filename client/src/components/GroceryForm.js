@@ -13,15 +13,19 @@ class GroceryForm extends React.Component {
   onSubmitFn(e) {
     e.preventDefault();
     console.log('the button was clicked ...');
-    this.props.addItem(this.state.item);
+    //this.props.addItem(this.state.item, this.state.quantity);
+    console.log(this.state.item);
+    console.log(this.state.quantity);
   }
 
+
   onChangeFn(e) {
+    const { name, value } = e.target
     this.setState({
-      item: e.target.value
+      [name]: value,
     })
-    console.log(e.target.value)
   }
+
 
   render() {
     return (
@@ -30,7 +34,7 @@ class GroceryForm extends React.Component {
           <input name="item" value={this.state.item} onChange={this.onChangeFn.bind(this)} />
         </label>
         <label> Qunatity
-          <input name="quantity" value={this.state.quantity} />
+          <input name="quantity" value={this.state.quantity} onChange={this.onChangeFn.bind(this)} />
         </label>
         <button>Add Grocery</button>
       </form>
@@ -39,3 +43,5 @@ class GroceryForm extends React.Component {
 }
 
 export default GroceryForm
+
+//  onChange={this.onChangeFn.bind(this)}

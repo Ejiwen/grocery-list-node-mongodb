@@ -11,13 +11,14 @@ class App extends React.Component {
     }
   }
 
-  addItem (item) {
+  addItem (item, quantity) {
     console.log('---------');
     this.setState({
       items: [...this.state.items, item]
     })
     axios.post('/item', {
-      item: item
+      item: item,
+      quantity: quantity
     })
     .then((response) => console.log('DONE'));
   }
