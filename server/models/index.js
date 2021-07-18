@@ -1,8 +1,7 @@
+let bd = require('../bd');
 
 module.exports = {
-  addItem: function(item, quantity) {
-    console.log('*************');
-    console.log(item);
-    console.log(quantity);
-  }
+  addItem: function(item, callback) {
+    callback()
+}
 }

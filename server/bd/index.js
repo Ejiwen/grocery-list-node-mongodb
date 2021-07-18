@@ -1,22 +1,16 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/grocerybd', {useNewUrlParser: true, useUnifiedTopology: true});
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Database is connected ... ');
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'ONEDAYBEFORE'
 });
 
-const grocery = new mongoose.Schema({
-  item: String,
-  quantity: Number
-});
+connection.connect();
 
-const Grocery = mongoose.model('Grocery', grocery);
+// connection.query(`INSERT INTO testtable(name) VALUES('amadou')`, function (error, results, fields) {
+//   if (error) throw error;
+//   console.log('The solution is: ', results[0].solution);
+// });
 
-const element = new Grocery({
-  item: 'Orange',
-  quantity: 5
-});
-
-element.save();
+module.exports = {connection}

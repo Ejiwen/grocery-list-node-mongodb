@@ -13,9 +13,9 @@ class GroceryForm extends React.Component {
   onSubmitFn(e) {
     e.preventDefault();
     console.log('the button was clicked ...');
-    //this.props.addItem(this.state.item, this.state.quantity);
-    console.log(this.state.item);
-    console.log(this.state.quantity);
+    this.props.addItem(this.state.item, this.state.quantity);
+    // console.log(this.state.item);
+    // console.log(this.state.quantity);
   }
 
 
