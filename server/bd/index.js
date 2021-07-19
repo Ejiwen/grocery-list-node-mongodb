@@ -14,9 +14,22 @@ const grocery = new mongoose.Schema({
 
 const Grocery = mongoose.model('Grocery', grocery);
 
+/*
 const element = new Grocery({
   item: 'Orange',
   quantity: 5
 });
 
-element.save();
+//element.save();
+*/
+module.exports = {
+  addTobd: function(item, quantity) {
+    const element = new Grocery({
+      item: item,
+      quantity: quantity
+    });
+    element.save();
+  },
+}
+
+

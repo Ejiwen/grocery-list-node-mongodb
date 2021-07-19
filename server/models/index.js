@@ -1,8 +1,7 @@
+const bd = require('../bd/index.js');
 
 module.exports = {
   addItem: function(item, quantity) {
-    console.log('*************');
-    console.log(item);
-    console.log(quantity);
+    bd.addTobd(item, quantity);
   }
 }

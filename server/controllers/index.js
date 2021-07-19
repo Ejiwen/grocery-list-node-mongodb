@@ -1,4 +1,5 @@
 const models = require('../models');
+//const bd = require('./bd/index.js');
 
 module.exports = {
   addItem: function(req, res) {
